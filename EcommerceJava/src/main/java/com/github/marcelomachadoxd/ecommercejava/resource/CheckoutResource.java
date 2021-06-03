@@ -17,6 +17,7 @@ public class CheckoutResource {
 
     @PostMapping
     public ResponseEntity<Void> create(CheckoutRequest checkoutRequest) {
+        checkoutService.create(checkoutRequest);
 
         return ResponseEntity.ok().build();
     }
