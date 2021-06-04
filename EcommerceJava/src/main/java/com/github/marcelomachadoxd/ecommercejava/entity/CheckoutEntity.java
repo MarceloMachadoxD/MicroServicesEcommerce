@@ -18,6 +18,7 @@ public class CheckoutEntity {
     private String code;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public enum Status {
