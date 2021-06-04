@@ -33,12 +33,12 @@ spring:
               serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
       bindings:
         checkout-created-output:
-          destination: streaming.ecommerce.checkout.created
+          destination: checkout
           contentType: application/*+avro
           producer:
             use-native-encoding: true
         payment-paid-input:
-          destination: streaming.ecommerce.payment.paid
+          destination: payment
           contentType: application/*+avro
           group: ${spring.application.name}
           consumer:
