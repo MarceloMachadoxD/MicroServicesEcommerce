@@ -3,9 +3,7 @@ package com.github.marcelomachadoxd.ecommercejava.entity;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Builder
 @Entity
@@ -13,10 +11,18 @@ import javax.persistence.Id;
 public class CheckoutEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
     private String code;
 
+    @Column
+    private Status status;
+
+    public enum Status {
+        CREATED,
+        APPROVED
+    }
 
 }
